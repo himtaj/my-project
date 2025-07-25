@@ -1,0 +1,6 @@
+We created and implemented a basic student registration form using HTML.
+ In which we Designed a simple form layout with fields for Name, Email, and Age , using HTML 
+elements like <form>, <label>, <input>, and <button>.
+We primarily focused on implementing HTML5's built-in validation 
+features directly within the input tags Like ' Min and Max', 'Min lenght and Max Lenght' Etc
+
