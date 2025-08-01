@@ -1,0 +1,10 @@
+The Experiment Mainly Focus On:
+
+Body: Everything is perfectly centered on the page, like a picture in a frame. The background is a cool, dark color.
+Main Box (.atm-card): This is the main white-ish box. It's a bit see-through and blurry, like frosted glass. It gets bigger and a little brighter when you move your mouse over it.
+Balance Section: This is the top part of the box. It has two parts: "Current Balance" in small, faded letters, and the big "$0" number, which looks a bit shiny.
+Buttons: The two buttons ("Deposit" and "Withdraw") are organized in a simple list.
+Button Style: Both buttons have rounded corners and bold text. They change color a little and pop out when you hover over them, and they press down when you click.
+Deposit Button: This button has a nice green color that fades from light to dark.
+Withdraw Button: This button has a nice red color that also fades from light to dark.
+Semantic HTML (Best Practice): The HTML structure is clean and organized. Using a <div> for the main card, a <div> for the balance section.
