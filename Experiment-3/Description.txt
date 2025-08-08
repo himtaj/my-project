@@ -1,0 +1,64 @@
+In this experiment, I created a simple Admin Dashboard UI. The goal was to build a responsive layout using modern CSS techniques.
+
+HTML:
+
+To make this, I used different HTML tags like div, header, nav, main, and footer
+To create a logical structure for the page. I also used an input tag with a checkbox type and a label to create the dark mode toggle button.
+
+Basic Structure:(Experiment-3)
+A .container div holds all the other content inside it.
+A header contains the title and the dark mode toggle.
+A nav bar contains an unordered list (ul) of links.
+A main section holds the primary content.
+A footer is at the bottom of the page.
+
+By this HTML skeleton is Ready now we have to apply CSS to it.
+
+CSS:
+
+CSS stands for Cascading Style Sheets, which is used to add design and color to the HTML code.
+
+Basic Structure of CSS:
+
+A CSS rule consists of a selector and a declaration block.
+
+Selector {
+  Property : value;
+}
+
+CSS properties used in this experiment:
+
+CSS Variables: 
+:root { ... } is a selector that targets the highest-level element in the document (the <html> tag)
+ By defining CSS variables here, we can reuse and easily change values for colors and other properties throughout the stylesheet, which is perfect for theming.
+
+ CSS Grid:
+This is a powerful layout module that helps organize content in a two-dimensional grid of rows and columns. We use display: grid on the .container to create the main layout.
+Properties like grid-template-columns and grid-template-rows define the size of the rows and columns.
+
+Responsiveness:
+This UI is responsive, meaning it adjusts itself to different screen sizes. For this layout, the CSS Grid automatically handles the responsiveness. 
+The header and footer are set to span both columns, ensuring they always stretch across the full width of the screen.
+
+Dark Mode Toggle:
+By using the :checked pseudo-class selector on a hidden checkbox, we can change the CSS variables when the checkbox is toggled.
+This allows us to switch from a light to a dark theme instantly.
+
+Some of the basic CSS Properties Used:
+
+background-color: To set the background color.
+color: To set the color of fonts.
+display: To define the layout model (e.g., flex, grid).
+justify-content: To justify content inside a container.
+padding: The space between the content and the border.
+grid-template-columns: To set the size of grid columns.
+grid-template-rows: To set the size of grid rows.
+border: To edit the border of the container.
+border-radius: To smooth the edges of the containers.
+
+Learning Outcomes:
+
+1. How to use CSS variables to create a themable UI.
+2. How to implement a dark mode toggle using a hidden checkbox and the :checked pseudo-class.
+3. How to create a complex page layout with CSS Grid.
+4. Understanding the use of Flexbox for aligning content within a smaller container, like the header.
