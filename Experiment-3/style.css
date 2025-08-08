@@ -1,0 +1,67 @@
+:root {
+    --header-bg-color: rgb(27, 149, 27);
+    --footer-bg-color : rgb(27, 149, 27);
+    --nav-bg-color :rgb(222, 218, 218);
+    --main-bg-color : white;
+    --main-color : rgb(0, 0, 0);
+    --ul-color : rgb(0, 0, 0);
+    --a-color : blue;
+}
+input:checked~.container{
+    --header-bg-color: rgb(30, 31, 30);
+    --footer-bg-color : rgb(33, 35, 33);
+    --nav-bg-color :rgb(56, 53, 53);
+    --main-bg-color : rgb(95, 92, 92);
+    --main-color : rgb(255, 255, 255);
+    --ul-color : white;
+    --a-color : white;
+}
+ul {
+    color : var(--ul-color);
+}
+a {
+    color : var(--a-color)
+}
+.container {
+    height : 100vh;
+    display :  grid ;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 50px  auto 50px;
+    
+
+}
+header {
+    border : 2px solid black;
+    background-color : var(--header-bg-color);
+    color : white;
+    grid-column: 1/span2;
+    display: flex;
+    flex-direction : row;
+    justify-content:space-between;
+    align-items: center;
+    padding-left : 10px;
+    padding-right : 10px;
+
+}
+nav {
+    border : 2px solid black;
+    background-color: var(--nav-bg-color);
+}
+main {
+    border : 2px solid black;
+    padding-left : 10px;
+    background-color: var(--main-bg-color);
+    color : var(--main-color);
+
+}
+footer {
+    border : 2px solid black;
+    background-color : var(--footer-bg-color);
+    color : white;
+    grid-column: 1/span2;
+    text-align : center;
+}
+
+#theme {
+     display: none;
+}
