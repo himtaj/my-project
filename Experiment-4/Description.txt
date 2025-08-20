@@ -1,0 +1,62 @@
+Experiment 4
+Create a simple feature that displays a live character count as the user types in a textarea. This helps you practice real-time event handling and dynamic content updates to improve user interaction.
+
+Overview
+In this experiment, I created  a simple feature that displays a live character count as the user types in a textarea
+
+HTML Structure:
+
+1. <!DOCTYPE html>: This declaration defines the document type and version of HTML. It tells the browser that this is an HTML5 document.
+2. <html>: This is the root element of the entire HTML page. All other elements are nested inside of it.
+3. <head>: This section contains meta-information about the HTML document, which is not displayed on the web page itself. It includes the character set, title, and styling.
+4. <meta charset="UTF-8">: Specifies the character encoding for the document. UTF-8 is a widely used character encoding that can represent almost all characters and symbols.
+5. <title>: Sets the title of the HTML page, which appears in the browser's title bar or tab.
+
+Inside body tag :
+
+1. A **main outer div** called `outer_div` to hold everything inside one box.  
+2. A <h2> heading with text "Live Character Count".  
+3. A <textarea> where user can type text. This textarea has an id="inputarea" and oninput="showcount()" event.  
+    `id` is a unique name for an element so we can find it later in css or js.
+    oninput` means whenever user types or deletes something, the function is called.  
+4. A <span id="Counter">0</span> which shows the live count of characters.  
+
+JavaScript Logic :  
+
+The Function 
+
+I made a function named **showcount()**. It runs every time user types something in textarea.  
+
+javascript
+
+function showcount() {
+    const textarea = document.getElementById("inputarea");
+    const count = textarea.value.length;
+
+    const counter = document.getElementById("Counter");
+    counter.textContent = count;
+}
+ 
+In this function getElementById is used to refference the tag to some const or variable .
+
+"Value" is used to access the message inside the text area .
+
+"Length " is used to count the number of character inside the text area.
+
+Basic CSS : 
+
+-  use of basic css properties like 
+   - height                                  Set the height  of outer and textbox .
+   - width                                   Set the width
+   - border                                  Create a border around the div
+   - border-radius                           To curve the egde of the border.
+   - display : flex                          To display the content is row and column.
+   - text-align                              To align the text.
+
+   Learning outcomes: 
+
+1. Got familiar with HTML structure (head, body, div, textarea, span).
+2. Understood how to use the id attribute to target elements.
+3. Learned about oninput event for live updates.
+4. Explored JavaScript DOM methods, specially getElementById.
+5. Learned about .value and .length properties of textarea.
