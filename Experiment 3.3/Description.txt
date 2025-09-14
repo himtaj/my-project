@@ -1,0 +1,55 @@
+Title:
+Person Class Hierarchy with Student and Teacher Subclasses
+This just means we are going to create a main class called Person and then create two smaller classes, Student and Teacher, that come from it.
+
+We want to learn inheritance in JavaScript.
+Inheritance = when one class (child) can use the properties and methods of another class (parent).
+This is an important part of object-oriented programming (OOP).
+Person is the parent (base) class.
+Student and Teacher are child (sub) classes.
+
+Step by Step:
+
+1. Create a Person class
+2. It has some properties like name and age.
+3. It has a method (function) to show this information.
+4. Create a Student class (child of Person)
+5. It has everything a Person has (name, age).
+6. Plus one extra property like grade or course.
+7. It has its own method that shows name, age, and grade.
+8. Create a Teacher class (child of Person)
+9. It has everything a Person has (name, age).
+10. Plus one extra property like subject or department.
+11. It has its own method that shows name, age, and subject.
+12. Test the classes
+13. Make one object of Student and one object of Teacher.
+14. Call their methods to check how they display details.
+
+Named Import
+This imports specific exported members from a module:
+js
+import { member1, member2 } from './module-file.js';
+
+Namespace Import
+Import everything as an object:
+js
+import * as myNamespace from './module-file.js';
+
+Import with Aliases
+Rename imports for convenience:
+js
+import { member1 as alias1, member2 as alias2 } from './module-file.js';
+
+Helps avoid name collisions or improve readability.
+
+Mixing Default and Named Imports
+Combine both in one statement:
+js
+import defaultMember, { member1, member2 } from './module-file.js';
+
+Learning Outcomes
+
+Base class → a general blueprint (Person).
+Subclasses → more specific versions (Student, Teacher).
+Inheritance → Student and Teacher automatically get Person’s features.
+Overriding methods → Student and Teacher can change or add to Person’s method.
