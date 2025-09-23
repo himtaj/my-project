@@ -1,0 +1,38 @@
+In this Experiment i made Concurrent Ticket Booking System with Seat Locking and Confirmation.
+
+1. This Node.js application, built with the Express.js framework, creates a simple seat booking API. It manages the state of a fixed number of seats, allowing clients to lock, confirm, or unlock them.
+2. The core logic handles a time-based lock mechanism to prevent race conditions during booking.
+
+Setup and State Management:
+
+1. Dependencies: The code starts by importing express and cors to set up the server and handle cross-origin requests.
+2. In-Memory Store: A JavaScript object named seats is used as a simple, in-memory database. It's initialized to represent a total of 10 seats, each starting with an available status.
+3. Lock Time-to-Live (TTL): The LOCK_TTL constant is set to 60,000 milliseconds (1 minute). This defines the duration for which a seat lock is valid.
+4. clearSeatTimer(seat): This function cancels a pending timeout for a seat, ensuring that the seat doesn't automatically become available after it has been booked or unlocked manually.
+5. armSeatExpiry(seatId): This function is the key to the time-based lock. It sets a setTimeout for a specific seat. If a seat's status is still locked after the LOCK_TTL has passed, it automatically reverts to available.
+
+API Endpoints:
+
+1. GET /seats: This route provides a read-only view of the current status of all seats. It loops through the seats object and returns a simplified version containing only the id and status for each seat.
+2. POST /lock/:id: This route allows a user to temporarily lock a specific seat.
+3. It checks if the seat exists and if it's already booked or locked. It returns appropriate status codes (404, 409, 423) and error messages for these cases.
+4. If the seat is available, it changes its status to locked, associates it with a user (from the query parameter or 'anonymous'), and sets a lockExpiresAt timestamp.
+5. Finally, it calls armSeatExpiry() to start the 1-minute timer, giving the user a limited time to confirm the booking.
+6. POST /confirm/:id: This route allows a user to finalize a booking for a seat they have locked.
+7. POST /unlock/:id: This route allows a user to release a locked seat without booking it.
+8. It checks if the seat is already available or if it's booked (which prevents unlocking a permanent reservation).
+9. If the seat is locked, it cancels the expiry timer and resets the seat's status to available.
+10. If all checks pass, it clears the expiry timer (clearSeatTimer()) and updates the seat's status to booked, completing the reservation.
+
+Server Execution:
+
+1. The final app.listen() call starts the server, making the API accessible on http://localhost:3000.
+2. This allows a front-end application to interact with and manage the seat states in real-time.
+
+Learning Outcomes:
+
+1. State Management: Understanding how to use an in-memory object (seats) to maintain the application's state and track the status of resources over time.
+2. Concurrency and Race Conditions: Learning how to prevent multiple clients from booking the same seat simultaneously by implementing a "lock" and "confirm" workflow. This is a crucial concept in building robust multi-user applications.
+3. Creating a RESTful API with Complex Logic: Building on basic CRUD operations to create a more sophisticated API with multi-step processes (lock, then confirm).
+4. Object Manipulation: Efficiently iterating over and manipulating JavaScript objects using Object.entries() and Object.keys().
+5. Conditional Logic: Implementing robust if/else statements to handle various scenarios and edge cases, such as a seat being locked by a different user or an expired lock.
