@@ -1,0 +1,55 @@
+In this experiment, I created CLI Employee Management System Using Node.js and Arrays
+
+This code creates a command-line interface (CLI) for a simple employee management system using Node.js. It allows a user to interact with the program by entering choices to add, list, or remove employees from an array.
+
+Core Concepts:
+
+1. The readline module: This built-in Node.js module provides an interface for reading data from a readable stream, like the command line (process.stdin), one line at a time. It's essential for creating interactive programs where the user needs to provide input
+2. The createInterface method sets up this interaction, and the question method prompts the user for input and then calls a callback function with the user's response.
+
+Array Methods: The code heavily uses JavaScript's built-in array methods to manage the employees array.
+
+1. push(): This method adds one or more elements to the end of an array and returns the new length of the array. It's used in addEmployee() to add a new employee object.
+2. forEach(): This method executes a provided function once for each array element. It's a clean way to loop through all employees in listEmployees() and print their details.
+3. findIndex(): This method returns the index of the first element in an array that satisfies a provided testing function. If no element passes the test, it returns -1. 
+4. splice(): This is a powerful method that changes the contents of an array by removing, replacing, or adding elements in place.
+
+Code Breakdown:
+
+1. const employees = [...]: This line initializes an array of employee objects. This is the central data store for the program.
+2. const rl = readline.createInterface(...): This creates the readline interface. It connects the standard input (process.stdin)
+3. function handleChoice(choice): This function uses a switch statement to execute the correct function based on the user's input ('1', '2', '3', or '4'). The default case handles invalid input.
+
+function addEmployee():
+
+1. It prompts the user for a name and an ID.
+2. t uses nested rl.question calls to handle the two separate inputs.
+3. The second rl.question's callback function creates a new employee object and adds it to the employees array using the push() method.
+4. It then confirms the addition and redisplays the menu.
+
+function listEmployees():
+
+1. It checks if the employees array is empty.
+2. If it's not empty, it loops through the array using forEach() and prints the name and ID of each employee.
+3. Finally, it calls displayMenu() to return to the main menu.
+
+Command-Line Interface (CLI) Theory:
+
+1. Input/Output (I/O) Streams: The core of a CLI is its use of I/O streams. In Node.js, these are objects that allow for data to flow into and out of a program.
+2. process.stdin (Standard Input): This is a readable stream for receiving data typed by the user. The readline module listens to this stream to capture user input.
+3. process.stdout (Standard Output): This is a writable stream used to display text to the console, such as program menus, prompts, and results. console.log() is a convenient way to write to this stream.
+
+Data Structures: The Array:
+
+1. Create (Add): The addEmployee() function uses push() to add new data to the array.
+2. Read (List): The listEmployees() function uses forEach() to read and display the data.
+3. Delete (Remove): The removeEmployee() function uses findIndex() to locate data and splice() to delete it.
+
+This code provides a practical example of a CRUD (Create, Read, Update, Delete) system using a simple array as the database. While this in-memory array is not persistent (data is lost when the program closes), it effectively demonstrates the core principles of managing a collection of data.
+
+Learning Outcomes:
+
+1. Focus on the student: They describe what the learner will be able to do, not what the instructor will teach.
+2. Use action verbs: They begin with a measurable verb (e.g., explain, analyze, apply, create).
+3. Are measurable: They can be observed and assessed.
+4. Guide the design of courses and assessments and clarify teaching goals.
