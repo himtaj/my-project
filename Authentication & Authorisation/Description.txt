@@ -1,0 +1,25 @@
+Title
+User Authentication and Authorization
+
+Description:
+I learned how to secure an Express.js app using JWT (JSON Web Tokens) and role-based access.
+Authentication checks the user’s identity, while authorization controls which routes they can access.
+
+Steps I Followed:
+1. Set up Express.js and installed dependencies: express, jsonwebtoken, bcrypt, body-parser.
+2. Created a register endpoint to save username, password, and role. Passwords were hashed using bcrypt.
+3. Created a login endpoint to check credentials and generate a JWT token.
+4. Implemented JWT authentication middleware to verify tokens on protecte routes.
+5. Implemented role-based middleware to allow access based on user roles (Admin or User).
+6. Created protected routes:
+   /admin → Admin only
+   /user → Admin and User
+7. Tested the app in Postman using Authorization header with Bearer <TOKEN>.
+
+Learning Outcomes:
+
+Learned how JWT works for stateless authentication.
+Understood role-based access control (RBAC) to restrict routes.
+Learned how to secure routes using middleware
+Gained experience with password hashing using bcrypt.
+Learned the importance of middleware order (authenticate first, then authorize).
