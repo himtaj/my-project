@@ -1,0 +1,25 @@
+Build a React application and optimize it using a multi-stage Docker build (Node for build stage + Nginx for production).
+
+Create a Dockerfile and .dockerignore to reduce image size by excluding dev files and unnecessary folders.
+
+Build the Docker image locally, run the container, and ensure the app is served on http://localhost.
+
+Verify that the final image is lightweight & production-ready.
+
+Set up CI/CD using GitHub Actions to automate build, test, and deployment steps.
+
+Create .github/workflows/main.yml that triggers on push to main branch.
+
+Automatically install Node dependencies, run tests (npm test), and build the project (npm run build).
+
+Optionally deploy build files to hosting like GitHub Pages / Netlify / AWS S3.
+
+Build a full-stack app (React frontend + Node/Express backend + optional DB like MongoDB).
+
+Deploy frontend and backend to AWS EC2 instances.
+
+Configure Application Load Balancer (ALB) to distribute traffic across backend servers.
+
+Set up VPC, security groups, and domain routing (Route 53 optional).
+
+Test the deployed app in browser to ensure high availability, scaling, & load balancing.
